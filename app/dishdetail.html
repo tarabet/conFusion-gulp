@@ -59,12 +59,15 @@
             </div>
 
             <div class="col-xs-9 col-xs-offset-1" ng-controller="DishCommentController">
-
-                <blockquote ng-hide="commentForm.$invalid">
-                    <p>{{ comment.rating }} Stars</p>
-                    <p>{{ comment.comment }} </p>
-                    <footer>{{ comment.author }}, {{ comment.date | date: 'MMM. d, y' }}</footer>
-                </blockquote>
+                <ul class="list-unstyled">
+                    <li>
+                        <blockquote ng-hide="commentForm.$invalid">
+                            <p>{{ comment.rating }} Stars</p>
+                            <p>{{ comment.comment }} </p>
+                            <footer>{{ comment.author }}, {{ comment.date | date: 'MMM. d, y' }}</footer>
+                        </blockquote>
+                    </li>
+                </ul>
 
                 <form class="form-horizontal" name="commentForm" ng-submit="submitComment()" novalidate>
 
@@ -108,6 +111,8 @@
 <!-- build:js scripts/main.js -->
     <script src="../bower_components/angular/angular.min.js"></script>
     <script src="scripts/app.js"></script>
+    <script src="scripts/controllers.js"></script>
+    <script src="scripts/services.js"></script>
 <!-- endbuild -->
 
 </body>
