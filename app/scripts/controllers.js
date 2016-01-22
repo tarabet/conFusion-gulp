@@ -1,6 +1,15 @@
 'use strict';
 
 angular.module('confusionApp')
+
+    .controller('IndexController', ['$scope', function($scope) {
+
+    }])
+
+    .controller('AboutController', ['$scope', function($scope) {
+
+    }])
+
     .controller('MenuController', ['$scope', 'menuFactory', function($scope, menuFactory) {
 
         $scope.tab = 1;
@@ -66,9 +75,10 @@ angular.module('confusionApp')
         };
     }])
 
-    .controller('DishDetailController', ['$scope', 'menuFactory', function($scope, menuFactory) {
+    .controller('DishDetailController', ['$scope', '$stateParams', 'menuFactory', function($scope, $stateParams, menuFactory) {
 
-        $scope.dish = menuFactory.getDish(3);
+        var dish = menuFactory.getDish(parseInt($stateParams.id, 10));
+        $scope.dish = dish;
 
     }])
 
