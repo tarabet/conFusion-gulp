@@ -83,6 +83,3 @@ gulp.task('browser-sync', ['default'], function() {
 
     gulp.watch(['dist/**/*.*']).on('change', browserSync.reload);
 });
-
-
-
